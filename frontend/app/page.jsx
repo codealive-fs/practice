@@ -2,43 +2,69 @@
 // import Image from "next/image";
 import Post from "../components/post";
 import { useState, useEffect } from "react";
+// import Home from "./Home/page";
+import Link from 'next/link';
+import Nav from "../components/nav";
 
 
-const mockPosts = [
-  {
-    id: 1,
-    likes: 23,
-    description: "Bats are blood suckers.",
-    image: { url: "/uploads/igam_ogam_VV_13d2ozcy4_unsplash_47af6e77c9.jpg"}
-  },
-  {
-    id: 2,
-    likes: 12,
-    description: "The worst thing about mentalilness is people expect you to behave as if you dont want.",
-    image: { url: "/uploads/mark_basarab_1_Ot_Uk_D_8svc_unsplash_cdacf2bd7b.jpg"}
-  },
-  {
-    id: 3,
-    likes: 11,
-    description: "Bats are good blood suckers.",
-    image: { url: "/uploads/adam_willoughby_knox_snq_ARK_Tgoc_unsplash_bf1e7b92e2.jpg"}
-  },
-];
 
-
-export default function Home() {
-
-  const [post, setPosts] = useState([])
-
-  useEffect(() => {
-    useState(mockPosts)
-  })
-
+// export default function Home() {
+export default function main() {
   return (
     <>
-      {post.map(({ likes, description, image, id }) => (
-        <Post key={id} likes={likes} description={description} url={image.url} />
-      ))}
+    <Nav />
+    {/* <Link href="/Home">Home</Link>
+                                              
+    <Link href="/Create">Create</Link> */}
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////
+// "use client"
+// // import Image from "next/image";
+// import Post from "../components/post";
+// import { useState, useEffect } from "react";
+
+// export default function Home() {
+
+//   const [post, setPosts] = useState([])
+
+//   useEffect(() => {
+//     const getPosts = async () => {
+//       const response = await fetch('http://localhost:1337/api/posts/?populate=*')
+//       const data = await response.json()
+//       setPosts(data?.data)
+//       console.log(data.attributes.image.data.attributes.url);
+//     }
+//     getPosts();
+//   }, [])
+  
+//   return (
+//     <>
+//       {post.map(({ id, attributes }) => (
+//         <Post
+//         key={id}
+//         likes={attributes.likes}
+//         description={attributes.description[0].children[0].text}
+//         url={attributes.image.data.attributes.url}
+//         />
+//       ))}
+//     </>
+    
+//   );
+// }

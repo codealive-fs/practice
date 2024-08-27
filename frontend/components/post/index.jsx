@@ -6,7 +6,6 @@ const formatImageURL = (url) => `${API_URL}${url}`
 
 
 export default ({ likes, description, url }) => {
-  console.log(url);
   return (
     <div className="px-0.75 py-1.25  rounded border border-[#a3a3a3]">
       <img className="max-w-15.625" src={formatImageURL(url)} />
